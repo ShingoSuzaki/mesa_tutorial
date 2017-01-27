@@ -9,7 +9,7 @@ class MoneyAgent(Agent):
     
     def step(self):
         # The agent's step will go here
-        pass
+        print(self.unique_id) #エージェントのunique_idを表示
 
 class MoneyModel(Model):
     """A model with some number of agents."""
