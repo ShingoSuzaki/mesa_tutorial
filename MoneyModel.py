@@ -1,4 +1,5 @@
 from mesa import Agent, Model
+from mesa.time import RandomActivation
 
 class MoneyAgent(Agent):
     """An agent with fixed initial wealth"""
