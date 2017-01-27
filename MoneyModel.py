@@ -14,7 +14,7 @@ class MoneyModel(Model):
     """A model with some number of agents."""
     def __init__(self, N):
         self.num_agents = N
-        self.schedule = RandomeActivation(self)
+        self.schedule = RandomActivation(self)
         # Create agents
         for i in range(self.num_agents):
             a = MoneyAgent(i, self)
