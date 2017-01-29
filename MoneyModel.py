@@ -1,5 +1,6 @@
 from mesa import Agent, Model
 from mesa.time import RandomActivation
+import random
 
 class MoneyAgent(Agent):
     """An agent with fixed initial wealth"""
@@ -9,7 +10,12 @@ class MoneyAgent(Agent):
     
     def step(self):
         # The agent's step will go here
-        print(self.unique_id) #エージェントのunique_idを表示
+        # print(self.unique_id) #エージェントのunique_idを表示
+        if self.wealth == 0:
+            return
+        other_agent = random.choice(self.model.schedule.agents)
+        other_agent.wealth += 1
+        self.wealth -= 1
 
 class MoneyModel(Model):
     """A model with some number of agents."""
